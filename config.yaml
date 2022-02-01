@@ -1,0 +1,40 @@
+# Copyright 2022 Canonical Ltd.
+# See LICENSE file for licensing details.
+#
+# TEMPLATE-TODO: change this example to suit your needs.
+# If you don't need a config, you can remove the file entirely.
+# It ties in to the example _on_config_changed handler in src/charm.py
+#
+# Learn more about config at: https://juju.is/docs/sdk/config
+
+options:
+
+  waltz-db-host:
+    type: string
+    default: ""
+    description: |
+      The DB host.
+
+  waltz-db-port:
+    type: string
+    default: "5432"
+    description: |
+      The DB port.
+
+  waltz-db-name:
+    type: string
+    default: "waltz"
+    description: |
+      The DB name.
+
+  waltz-db-username:
+    type: string
+    default: "waltz"
+    description: |
+      The DB username.
+
+  waltz-db-password:
+    type: string
+    default: "waltz"
+    description: |
+      The DB password.
