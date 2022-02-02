@@ -1,5 +1,15 @@
 # Charmed &nbsp;<img src="https://user-images.githubusercontent.com/5586487/152134303-f3a34f04-d459-4581-87df-cbd0d8e6a29f.png" alt="FINOS Waltz" width="150"/>
 
+> 💡 If you would like to quickly test Waltz in your laptop, check this from zero to hero [local deployment guide](TODO) using MicroK8s. 
+
+This project aims to provide an enterprise-grade deployment and day-2 operations option for FINOS Waltz using Juju and Charmed Operators.
+
+One command - `juju deploy finos-waltz-bundle` - deploys all you need to run Waltz on your local or production enviroment. 
+
+This project is 100% open source and questions from beginners are always welcomed!
+
+## Juju, Charms and Waltz
+
 The [Juju Charmed Operator Lifecycle Manager (OLM)](https://juju.is/docs/olm) is a hybrid-cloud application management and orchestration system for installation and day 2 operations. It helps deploy, configure, scale, integrate, maintain, and manage Kubernetes native, container-native and VM-native applications—and the relations between them.
 
 A charmed operator (also known, more simply, as a “charm”) encapsulates a single application and all the code and know-how it takes to operate it, such as how to combine and work with other related applications or how to upgrade it. Charms are programmed to understand a single application, its operations, and its potential to communicate or integrate with other applications. A charm defines and enables the channels by which applications connect.
