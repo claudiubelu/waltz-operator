@@ -3,6 +3,8 @@ In this sessions we went throught the basics og creating a Waltz Charmed Operato
 
 The charm code can be found in this repository. The following instructions were written to work on a Linux machine. 
 
+The commands run in this sessions can be found [here](#commands).
+
 Development setup:
 
 ### Install Charmcraft 
@@ -10,7 +12,6 @@ https://juju.is/docs/sdk/install-charmcraft
 https://juju.is/docs/sdk/charmcraft-config
 
 The recommended way to install charmcraft is from the stable channel with `sudo snap install charmcraft --classic`.
-
 
 ### Initialise your Charm
 https://juju.is/docs/sdk/initialise-your-charm
@@ -123,3 +124,55 @@ Finally, if all of these fail, the version will match the `revision` of your cha
 
 #### icon.svg
 An 100px x 100px SVG icon used for display on Charmhub. For more information please see this [post](https://discourse.charmhub.io/t/creating-icons-for-charms/1041).
+
+## Commands
+
+Install microk8s
+``` bash 
+sudo snap install microk8s --classic
+sudo snap alias microk8s.kubectl kubectl
+source ~/.profile
+sudo usermod -a -G microk8s $USER
+sudo chown -f -R $USER ~/.kube
+newgrp microk8s
+
+microk8s enable dns storage
+microk8s status --wait-ready
+```
+
+Install and bootstrap juju
+``` bash
+sudo snap install juju --classic
+juju bootstrap microk8s finos-waltz
+
+juju add-model finos-waltz
+juju status
+```
+
+Charmcraft
+```bash
+sudo snap install charmcraft --classic
+
+mkdir sample-charm
+cd sample-charm
+
+charmcraft init
+charmcraft pack
+```
+
+Deploy Charms
+``` bash
+juju deploy ./sample-operator_ubuntu-20.04-amd64.charm --resource httpbin-image=kennethreitz/httpbin
+juju status
+curl sample-operator-ip
+
+juju config sample-operator thing=foo
+```
+
+Waltz
+``` bash
+juju deploy ./waltz-operator_ubuntu-20.04-amd64.charm --resource waltz-image=ghcr.io/finos/waltz
+juju status
+
+juju config waltz-operator waltz-db-host="10.37.24.1"
+```
