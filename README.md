@@ -29,7 +29,31 @@ The applications necessary to run Waltz were deployed as a _bundle_ in the same 
 We assume your host had a functioning Internet connection. However it is also possible to [deploy charmed operators offline](https://juju.is/docs/olm/working-offline).
 
 ## Installation
-To get started, you can checkout the [local run documention](LOCAL_RUN.md), which will walk you through and explain all the different deployment steps to run a local Waltz instance, and will point you to docs for alternative deployments, such as clouds, barebone installations and other.
+To get started, you can checkout the [local run documention](docs/LocalDeployment.md), which will walk you through and explain all the different deployment steps to run a local Waltz instance, and will point you to docs for alternative deployments, such as clouds, barebone installations and other.
+
+## Usage
+
+The Waltz Operator charm can be deployed by running:
+
+```bash
+juju deploy finos-waltz-k8s --channel=edge
+```
+
+The Waltz Operator charm will initially be in a Waiting state, it expects postgresql configurations to be set:
+
+```sh
+juju config finos-waltz-k8s db-host="<db-host>" db-port="<db-port>" db-name="<db-name>" db-username="<db-username>" db-password="<db-password>"
+```
+
+For an in-depth guide on how to deploy Waltz in a local environment from scratch, see the [Local deployment guide](doc/LocalDeployment.md).
+
+## Relations
+
+TBA
+
+## OCI Images
+
+This charm requires the Waltz docker image: ``ghcr.io/finos/waltz``.
 
 ## Help and Support
 
@@ -44,6 +68,8 @@ TODO
 ## Contributing
 
 Visit Waltz [Contribution Guide](https://github.com/finos/waltz/blob/master/CONTRIBUTING.md) to learn how to contribute to Waltz.
+
+Please see the [Juju SDK docs](https://juju.is/docs/sdk) for guidelines on enhancements to this charm following best practice guidelines, and `DEVELOPMENT.md` for developer guidance.
 
 ## License
 
