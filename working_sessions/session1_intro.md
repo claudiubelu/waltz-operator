@@ -1,7 +1,7 @@
 # Intro to Juju and Charmed Operators
 _Session 1 - 26/Jan/22_
 
-[Slides](https://docs.google.com/presentation/d/1ldQU8VVmgKuUdvBEHQs0oOLYfk0CZNRHUqZbd4ssMl8/edit?usp=sharing)
+[[Public] Intro to the Juju World - Waltz meeting #1 Slides](https://docs.google.com/presentation/d/1ldQU8VVmgKuUdvBEHQs0oOLYfk0CZNRHUqZbd4ssMl8/edit?usp=sharing)
 
 In this sessions we went throught the basics of Juju and Charmed Operators. 
 The following key concepts were introduced:
