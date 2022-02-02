@@ -1,4 +1,7 @@
 # Charmcraft Basics
+
+[Juju and Charmed Operators Slides](https://docs.google.com/presentation/d/1GeLd9MrdBsHlCyJGHPIQbFIJh3OTCL0lPuMyx-KCsPQ/edit)
+
 In this sessions we went throught the basics og creating a Waltz Charmed Operator. After building the charm we manually integrated it with a PostgreSQL database and checked if the service was running.
 
 The charm code can be found in this repository. The following instructions were written to work on a Linux machine. 
