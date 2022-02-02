@@ -35,6 +35,9 @@ juju config finos-waltz-k8s waltz-db-username="<db-username>"
 juju config finos-waltz-k8s waltz-db-password="<db-password>"
 ```
 
+For an in-depth guide on how to deploy Waltz in a local environment, please see the
+[Local deployment guide](doc/LocalDeployment.md).
+
 ## Relations
 
 TBA
