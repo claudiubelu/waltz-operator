@@ -1,13 +1,5 @@
-[project]
-name = "waltz-integration-juju"
-description = "Kubernetes charm for FINOS Waltz"
-license = "Apache 2.0"
-python = "^3.8"
-readme = "README.md"
-homepage = "https://github.com/pedroleaoc/waltz-integration-juju"
-repository = "https://github.com/pedroleaoc/waltz-integration-juju"
-documentation = "https://github.com/pedroleaoc/waltz-integration-juju"
-
+# Copyright 2022 Canonical Ltd.
+# See LICENSE file for licensing details.
 # Testing tools configuration
 [tool.coverage.run]
 branch = true

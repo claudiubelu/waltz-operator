@@ -29,17 +29,17 @@ class WaltzOperatorCharm(charm.CharmBase):
         """Handles the Pebble Ready event."""
         # Get a reference the container attribute on the PebbleReadyEvent
         container = event.workload
-        self._rebuild_waltz_pebble_layer(container)
+        self._rebuild_waltz_pebble_layer(event, container)
 
-    def _on_config_changed(self, _):
+    def _on_config_changed(self, event):
         """Refreshes the service config.
 
         A new Waltz pebble layer specification will be set if any of the
         configuration options related to Waltz are updated.
         """
-        self._rebuild_waltz_pebble_layer()
+        self._rebuild_waltz_pebble_layer(event)
 
-    def _rebuild_waltz_pebble_layer(self, container=None):
+    def _rebuild_waltz_pebble_layer(self, event, container=None):
         """(Re)Builds the Waltz Pebble Layer.
 
         The Pebble layer will be (re)created if the credentials required by
@@ -57,6 +57,7 @@ class WaltzOperatorCharm(charm.CharmBase):
 
         if not container.can_connect():
             self.unit.status = model.WaitingStatus("Waiting for Pebble to be ready")
+            event.defer()
             return
 
         # Create the current Pebble layer configuration

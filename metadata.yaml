@@ -19,3 +19,4 @@ resources:
   waltz-image:
     type: oci-image
     description: OCI image for waltz (ghcr.io/finos/waltz)
+    upstream-source: ghcr.io/finos/waltz
