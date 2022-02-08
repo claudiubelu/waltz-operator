@@ -11,6 +11,12 @@ description: |
   In a nutshell, Waltz allows you to visualize and define your organisation's
   technology landscape. Think of it like a structured Wiki for your architecture.
 
+requires:
+  db:
+    interface: pgsql
+    limit: 1
+    scope: global
+
 containers:
   waltz:
     resource: waltz-image
